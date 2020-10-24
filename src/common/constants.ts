@@ -1,4 +1,4 @@
 export const routes = {
-    apiKey: "/apiKey",
+    apiKey: "/api-key",
     characters: "/characters",
 }
