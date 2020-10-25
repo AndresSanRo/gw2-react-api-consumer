@@ -4,6 +4,7 @@ const ApiKeyPage: FunctionComponent = (): JSX.Element => {
 	return (
 		<>
 			<h1>API key page</h1>
+			<Input label={'API key'} required={true} />
 			<Button text={'hey'} onClick={() => {}} />
 		</>
 	);
