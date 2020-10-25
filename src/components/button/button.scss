@@ -1,0 +1,10 @@
+@import '../../assets/styles.scss';
+
+button {
+	background-color: $red !important;
+	border-color: $red !important;
+	&:hover {
+		background-color: darken($red, 5) !important;
+		border-color: darken($red, 5) !important;
+	}
+}

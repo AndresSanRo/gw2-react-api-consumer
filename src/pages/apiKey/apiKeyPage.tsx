@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from "react";
-import { Input } from "../../components";
-import { Button } from "react-bootstrap";
+import React, { FunctionComponent } from 'react';
+import { Input, Button } from '../../components';
 const ApiKeyPage: FunctionComponent = (): JSX.Element => {
-  return (
-    <>
-      <h1>API key page</h1>
-    </>
-  );
+	return (
+		<>
+			<h1>API key page</h1>
+			<Button text={'hey'} onClick={() => {}} />
+		</>
+	);
 };
 
 export default ApiKeyPage;
