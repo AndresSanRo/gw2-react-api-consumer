@@ -1,16 +1,15 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { utils } from '../../common';
 
 export const useApiKey = (): {
-  apiKey: string;
-  setApiKey: (value: string) => void;
-  saveApiKey: () => void;
+	apiKey: string;
+	setApiKey: (value: string) => void;
+	saveApiKey: () => void;
 } => {
-  const [apiKey, setApiKey] = useState<string>(
-    localStorage.getItem("gw2ApiKey")
-  );
+	const [apiKey, setApiKey] = useState<string>(utils.getApiKey());
 
-  const saveApiKey = () => {
-    localStorage.setItem("gw2ApiKey", apiKey);
-  };
-  return { apiKey, setApiKey, saveApiKey };
+	const saveApiKey = () => {
+		utils.setApiKey(apiKey);
+	};
+	return { apiKey, setApiKey, saveApiKey };
 };
