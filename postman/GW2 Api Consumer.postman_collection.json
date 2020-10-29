@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "eebf6df6-3b3d-4ebc-a3e0-53cc3556965e",
+		"name": "GW2 Api Consumer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Get Account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/account",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "E978161A-0B75-E940-85F7-265BB7349C89DC6812D5-6CBA-475A-A87B-EBABD4E72D14",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "306dd0cb-60f3-42c5-8ae9-f1ac00479eba",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "06705db5-4892-4632-a5f8-76dee729eb1d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

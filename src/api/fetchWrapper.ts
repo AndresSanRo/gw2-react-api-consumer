@@ -1,54 +1,56 @@
-import { HttpResponse } from "../model";
+import { utils } from '../common';
+import { HttpResponse } from '../model';
 
 export async function get<T>(
-  path: string,
-  args: RequestInit = { method: "get" }
+	path: string,
+	args: RequestInit = { method: 'get' },
 ): Promise<HttpResponse<T>> {
-  return await http<T>(path, args);
+	return await http<T>(path, args);
 }
 
 export async function post<T>(
-  path: string,
-  body: any,  
-  args: RequestInit = { method: "post", body: JSON.stringify(body) }
+	path: string,
+	body: any,
+	args: RequestInit = { method: 'post', body: JSON.stringify(body) },
 ): Promise<HttpResponse<T>> {
-  return await http<T>(path, args);
+	return await http<T>(path, args);
 }
 
 export async function put<T>(
-  path: string,
-  body: any,
-  args: RequestInit = { method: "put", body: JSON.stringify(body) }
+	path: string,
+	body: any,
+	args: RequestInit = { method: 'put', body: JSON.stringify(body) },
 ): Promise<HttpResponse<T>> {
-  return await http<T>(path, args);
+	return await http<T>(path, args);
 }
 
 export async function deleteAsync<T>(
-  path: string,
-  args: RequestInit = { method: "delete" }
+	path: string,
+	args: RequestInit = { method: 'delete' },
 ): Promise<HttpResponse<T>> {
-  return await http<T>(path, args);
+	return await http<T>(path, args);
 }
 
 async function http<T>(
-  input: RequestInfo,
-  init?: RequestInit,
+	input: RequestInfo,
+	init?: RequestInit,
 ): Promise<HttpResponse<T>> {
-  const r: RequestInit = init || {};
+	const r: RequestInit = init || {};
 
-  if (!r.headers) r.headers = {};
+	if (!r.headers) r.headers = {};
 
-  r.headers = {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  };
+	r.headers = {
+		Accept: 'application/json',
+		'Content-Type': 'application/json',
+		Authorization: `Bearer ${utils.getApiKey()}`,
+	};
 
-  const response: HttpResponse<T> = await fetch(input, init);
+	const response: HttpResponse<T> = await fetch(input, init);
 
-  try {
-    // may error if there is no body (204 status code)
-    response.parsedBody = await response.json();
-  } catch (ex) {}
+	try {
+		// may error if there is no body (204 status code)
+		response.parsedBody = await response.json();
+	} catch (ex) {}
 
-  return response;
+	return response;
 }
