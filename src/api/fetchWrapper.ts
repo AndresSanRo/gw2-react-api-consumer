@@ -1,6 +1,8 @@
 import { utils } from '../common';
 import { HttpResponse } from '../model';
 
+export const baseUrl: string = 'https://api.guildwars2.com/v2';
+
 export async function get<T>(
 	path: string,
 	args: RequestInit = { method: 'get' },
