@@ -27,6 +27,35 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "Get Characters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/characters?ids=all",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"auth": {
@@ -34,7 +63,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "E978161A-0B75-E940-85F7-265BB7349C89DC6812D5-6CBA-475A-A87B-EBABD4E72D14",
+				"value": "",
 				"type": "string"
 			}
 		]
